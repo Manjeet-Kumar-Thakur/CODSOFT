@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thakur Ka Dhaaba</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #dbeafe, #fef9ff);
+      color: #333;
+    }
+
+    .navcontainer {
+      background: linear-gradient(to right, royalblue, skyblue);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    #navlist {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    #navlist a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    #navlogo {
+      font-size: 2rem;
+      color: white;
+      font-weight: bold;
+    }
+
+    .navimage {
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: white;
+      margin: 2rem auto;
+      width: 90%;
+      border-radius: 15px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      background-color: royalblue;
+      color: white;
+      padding: 0.7rem 1.2rem;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: darkblue;
+    }
+
+    .section-box {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .section-box h2 {
+      font-size: 2rem;
+      color: royalblue;
+      margin-bottom: 1rem;
+    }
+
+    .contentbox {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 2rem;
+      width: 80%;
+      margin: auto;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      background: white;
+      border-radius: 15px;
+      padding: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .item:hover {
+      transform: scale(1.01);
+    }
+
+    .leftbox ul, .leftbox ol {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+    }
+
+    .rightbox {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .rightbox img {
+      height: 180px;
+      width: 250px;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+
+    .rightbox:hover img {
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 12px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .rightbox:hover .overlay {
+      opacity: 1;
+    }
+
+    .footerbox {
+      background: royalblue;
+      text-align: center;
+      padding: 1rem;
+      color: white;
+      font-size: 1rem;
+      margin-top: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    form input, form button {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background: royalblue;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: darkblue;
+    }
+
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: auto;
+      font-style: italic;
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(30px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 768px) {
+      .item {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contentbox {
+        width: 95%;
+      }
+
+      .rightbox img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navcontainer">
+    <nav>
+      <ul id="navlist">
+        <li id="navlogo">Thakur Ka Dhaaba</li>
+        <li><img src="selfie.jpg" alt="Dhaaba logo" class="navimage" /></li>
+        <li>
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#menu">Menu</a>
+          <a href="#booking">Book Table</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero" class="hero">
+    <h1>Welcome to Thakur Ka Dhaaba</h1>
+    <p>Delicious Desi Food, Straight from Our Heart to Your Plate.</p>
+    <a href="#menu" class="btn">Explore Menu</a>
+  </section>
+
+  <section id="about" class="section-box">
+    <h2>About Us</h2>
+    <p>Thakur Ka Dhaaba is a family-run restaurant bringing the authentic taste of India to your plate. Our chefs blend tradition with innovation, using fresh ingredients and timeless recipes.</p>
+  </section>
+
+  <main id="menu" class="contentbox">
+    <div class="item">
+      <div class="leftbox">
+        <h2>Special Sweets</h2>
+        <ul><li>Sugar</li><li>Milk</li><li>Dry Fruits</li></ul>
+        <ol><li>Boil milk and add sugar</li><li>Add dry fruits and stir well</li><li>Freeze for 3 hours</li></ol>
+      </div>
+      <div class="rightbox">
+        <img src="specialsweets.webp" alt="Special Sweets" />
+        <div class="overlay"><span>Click to Buy</span></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="leftbox">
+        <h2>Barfi Delight</h2>
+        <ul><li>Khoa</li><li>Sugar</li><li>Cardamom</li></ul>
+        <ol><li>Mix khoa and sugar on low heat</li><li>Spread in tray and cool</li><li>Cut into squares and garnish</li></ol>
+      </div>
+      <div class="rightbox">
+        <img src="berfi.jpg" alt="Barfi" />
+        <div class="overlay"><span>Click to Buy</span></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="leftbox">
+        <h2>Maharaja Thaali</h2>
+        <ul><li>Roti</li><li>Sabzi</li><li>Rice + Daal</li></ul>
+        <ol><li>Serve hot with ghee</li><li>Add papad and chutney</li></ol>
+      </div>
+      <div class="rightbox">
+        <img src="image4.webp" alt="Thaali" />
+        <div class="overlay"><span>Click to Buy</span></div>
+      </div>
+    </div>
+  </main>
+
+  <section id="booking" class="section-box">
+    <h2>Book Your Table</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="date" required>
+      <input type="time" required>
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <section id="testimonials" class="section-box">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonials">
+      <blockquote>“Best dhaaba experience! The sweets were heavenly.” – Aditi Sharma</blockquote>
+      <blockquote>“Authentic Indian food with amazing service.” – Raj Verma</blockquote>
+    </div>
+  </section>
+
+  <section id="contact" class="section-box">
+    <h2>Contact Us</h2>
+    <p>Email: manjeetkumarthakur2004@gmail.com</p>
+    <p>Phone: +91-7061799756</p>
+  </section>
+
+  <footer class="footerbox">
+    <p>© Thakur Ka Dhaaba Pvt Ltd 2025</p>
+    <p>
+      <a href="#hero">Home</a> |
+      <a href="#menu">Menu</a> |
+      <a href="#booking">Booking</a> |
+      <a href="#contact">Contact</a>
+    </p>
+  </footer>
+</body>
+</html>
