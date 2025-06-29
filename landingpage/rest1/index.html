@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thakur Ka Dhaaba</title>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
     * {
@@ -247,11 +248,93 @@
     </nav>
   </header>
 
-  <section id="hero" class="hero">
-    <h1>Welcome to Thakur Ka Dhaaba</h1>
-    <p>Delicious Desi Food, Straight from Our Heart to Your Plate.</p>
-    <a href="#menu" class="btn">Explore Menu</a>
+
+
+
+
+
+
+
+
+ <section id="hero" class="hero">
+  <h1>Welcome to Thakur Ka Dhaaba</h1>
+  <p>Delicious Desi Food, Straight from Our Heart to Your Plate.</p>
+  <a href="#menu" class="btn">Explore Menu</a>
+
+  <div class="swiper heroSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" data-swiper-parallax="-100">
+        <img src="https://source.unsplash.com/800x500/?indian-food" />
+        <div class="content">
+          <h2>Authentic Dhaba Flavors</h2>
+          <button class="btn">Order Now</button>
+        </div>
+      </div>
+      <div class="swiper-slide" data-swiper-parallax="-100">
+        <img src="https://source.unsplash.com/800x500/?tandoori-roti" />
+        <div class="content">
+          <h2>Freshly Cooked, Every Time</h2>
+          <button class="btn">View Menu</button>
+        </div>
+      </div>
+      <div class="swiper-slide" data-swiper-parallax="-100">
+        <img src="https://source.unsplash.com/800x500/?indian-thali" />
+        <div class="content">
+          <h2>Feel the Village Vibe</h2>
+          <button class="btn">Book Table</button>
+        </div>
+      </div>
+    </div>
+    <!-- Pagination & Arrows -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+
+    
+     <section class="hero">
+    
   </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".heroSwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    loop: true,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    parallax: true,
+  });
+</script>
+
+
+
+
+
+
+  
 
   <section id="about" class="section-box">
     <h2>About Us</h2>
